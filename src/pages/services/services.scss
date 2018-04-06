@@ -1,0 +1,18 @@
+page-services {
+    .top-bg {
+        background: url(/assets/imgs/beauty.jpg) center;
+        background-size: cover;
+        padding: 30px 20px;
+        h3, p {
+            margin: 0;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+        }
+    }
+    
+    .list-md .item-block .item-inner {
+        border-bottom: none;
+    }
+}
+
+

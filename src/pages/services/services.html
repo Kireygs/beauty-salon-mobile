@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Услуги</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="top-bg home-bg">
+    <h3>Beauty Salon</h3>
+    <p>Услуги</p>
+  </div>
+
+<div padding>
+  <ion-list>
+    <button ion-item (click)="openPageSpecs('Парикмахер')">
+      <ion-avatar item-start>
+        <img src="assets/icon/hair.png">
+      </ion-avatar>
+      <h2>Парикмахер</h2>
+      <p>Стрижка</p>
+    </button>
+    <button ion-item (click)="openPageSpecs('Косметолог')">
+      <ion-avatar item-start>
+        <img src="assets/icon/cosmetology.png">
+      </ion-avatar>
+      <h2>Косметолог</h2>
+      <p>Чистка лиц</p>
+    </button>
+    <button ion-item (click)="openPageSpecs('Маникюрщица')"> 
+      <ion-avatar item-start>
+        <img src="assets/icon/manicure.png">
+      </ion-avatar>
+      <h2>Маникюр</h2>
+      <p>Обрезной, аппаратный</p>
+    </button>
+    <button ion-item (click)="openPageSpecs('Массаж')">
+      <ion-avatar item-start>
+        <img src="assets/icon/massage.png">
+      </ion-avatar>
+      <h2>Массаж</h2>
+      <p>Общий</p>
+    </button>
+    <button ion-item (click)="openPageSpecs('Визажист')">
+      <ion-avatar item-start>
+        <img src="assets/icon/makeup.png">
+      </ion-avatar>
+      <h2>Визажист</h2>
+      <p>Make up</p>
+    </button>
+  </ion-list>
+</div>
+  
+</ion-content>

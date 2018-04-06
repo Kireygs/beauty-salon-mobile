@@ -1,0 +1,36 @@
+
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>Логин</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+      <ion-list>
+
+          <ion-item>
+              <ion-label>Тип аккаунта</ion-label>
+              <ion-select [(ngModel)]="log" cancelText="Отмена" okText="Выбрать">
+                <ion-option *ngFor="let i of log" [value]="i.name">{{i.name}}</ion-option>
+              </ion-select>
+            </ion-item>
+  
+          <ion-item>
+            <ion-label floating>Логин</ion-label>
+            <ion-input type="text" [(ngModel)]="username"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label floating>Пароль</ion-label>
+            <ion-input type="password" [(ngModel)]="password"></ion-input>
+          </ion-item>
+        </ion-list>
+  
+        <div padding>
+            <button ion-button block (click)="signIn()">Войти</button>
+          </div>
+  </ion-content>
+  

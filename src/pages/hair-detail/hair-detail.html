@@ -1,0 +1,70 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{item.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <img src="{{item.img}}" alt="">
+  <ion-list>
+    <ion-item>
+      ФИО:
+      <p item-end>{{item.name}}</p>
+    </ion-item>
+
+    <ion-item>
+      Опыт работы:
+      <p item-end>{{item.experience}}</p>
+    </ion-item>
+
+    <ion-item>
+        Телефон:
+        <p item-end>{{item.phone}}</p>
+      </ion-item>
+
+      <ion-item>
+        E-mail:
+        <p item-end>{{item.mail}}</p>
+        </ion-item>
+  </ion-list>
+  <ion-card>
+  <ion-card-header>
+    Услуги:
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-list>
+      <ion-item  *ngFor="let s of item.service">
+        {{s.title}} :
+        <div item-end>{{s.price}} тг</div>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+
+<br>
+<img class="insta-icon" src="././assets/icon/insta.png" alt="">
+<span class="insta-text">@beautysalon</span>
+<br>
+<div class="insta-photos">
+
+<ion-grid>
+    <ion-row> 
+        <ion-col col-6 *ngFor="let ip of photos">
+            <img src="{{ip.img}}" alt="">
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+  <button ion-button block color="secondary" (click)="presentModal()">Записаться</button>  
+</ion-content>
+
+
+
+
+  
+

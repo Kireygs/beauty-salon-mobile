@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Мои заявки</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+
+
+<ion-content padding>
+    <ion-segment [(ngModel)]="type">
+        <ion-segment-button value="waitings">
+            <span>Ожидается</span> 
+        </ion-segment-button>
+  
+        <ion-segment-button value="done">
+            <span>Подтверждено</span> 
+        </ion-segment-button>
+
+
+        <ion-segment-button value="end">
+            <span>Выполнено</span> 
+        </ion-segment-button>
+    </ion-segment>
+
+      <ion-refresher (ionRefresh)="doRefresh($event)">
+          <ion-refresher-content></ion-refresher-content>
+        </ion-refresher>
+   
+      <div [ngSwitch]="type">
+              <ion-list *ngSwitchCase="'waitings'" >
+                  <button ion-item *ngFor="let item of waitings" (click)="itemSelected(item)">
+                      <p class="request-service">
+                        {{item.service}}
+                      </p>
+                        <p class="request-date">
+                          {{item.date}}
+                        </p>
+                        <p item-end>{{item.time}}</p>
+                  </button> 
+              </ion-list>
+
+              <ion-list *ngSwitchCase="'done'" >
+                  <button ion-item *ngFor="let item of done" (click)="itemSelected(item)">
+                      <p class="request-service">
+                        {{item.service}}
+                      </p>
+                        <p class="request-date">
+                          {{item.date}}
+                        </p>
+                        <p item-end>{{item.time}}</p>
+                  </button> 
+              </ion-list>
+
+              <ion-list *ngSwitchCase="'end'" >
+                  <button ion-item *ngFor="let item of end" (click)="itemSelected(item)">
+                      <p class="request-service">
+                        {{item.service}}
+                      </p>
+                        <p class="request-date">
+                          {{item.date}}
+                        </p>
+                        <p item-end>{{item.time}}</p>
+                  </button> 
+              </ion-list>
+        </div>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Отзывы</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-item>
+        <ion-label>Выберите мастера</ion-label>
+        <ion-select [(ngModel)]="selectSpec" (ionChange)="selectedSpec($event)" cancelText="Отмена" okText="Выбрать">
+          <ion-option *ngFor="let spec of forSelectSpecs" [value]="spec.name"> {{spec.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+    <ion-list>
+        <button ion-item *ngFor="let item of items" (click)="showAlert(item)">
+          <ion-item>
+              <h2>{{item.service}}</h2>
+          </ion-item>
+
+          <ion-item>
+              Мастер:
+              <p item-end>{{item.spec}}</p>
+          </ion-item>
+       
+        </button>
+      </ion-list>
+</ion-content>

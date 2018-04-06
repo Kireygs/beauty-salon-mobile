@@ -1,0 +1,37 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{item.service}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <img [src]="specialist.img" alt="">
+    <ion-list>
+        <ion-item>
+          День:
+          <p item-end>{{item.date}}</p>
+        </ion-item>
+        <ion-item>
+          Время:
+          <p item-end>{{item.time}}</p>
+        </ion-item>
+
+        <ion-item>
+            Мастер:
+            <p item-end>{{specialist.name}}</p>
+          </ion-item>
+      </ion-list> 
+          <button ion-button block color="danger" *ngIf="item.status == 'Ожидается'" (click)="cancelRequest(item.id)">Отменить заявку</button>   
+          <ion-item> 
+          <ion-input [(ngModel)]="toSave.title" placeholder="Оставить отзыв" clearInput *ngIf="item.status == 'Выполнено'"></ion-input> 
+        </ion-item>
+          <br>
+          <button ion-button block color="secondary" *ngIf="item.status == 'Выполнено'" (click)="addReview(item.id); 
+          showAlert()">Оставить отзыв</button>  
+      
+       
+</ion-content>

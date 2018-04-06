@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Новости</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)"> 
+          <img class="product-img" src="{{item.img}}" alt="">    
+         <h2>{{ item.title }}</h2> 
+         <p>{{item.info}}</p>
+        </button>  
+      </ion-list>
+</ion-content>
